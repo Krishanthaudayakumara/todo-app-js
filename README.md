@@ -15,6 +15,33 @@ Quick start (Docker):
 docker-compose up -d --build
 ```
 
+## Environment Setup (.env files)
+
+Since `.env` files are gitignored, you need to create them locally:
+
+**Backend (.env)**
+
+Create `backend/.env`:
+
+```
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=postgres
+DB_PASSWORD=postgres
+DB_NAME=todo_app
+NODE_ENV=development
+```
+
+**Frontend (.env.local)**
+
+Create `frontend/.env.local`:
+
+```
+REACT_APP_API_URL=http://localhost:5000/api
+```
+
+For Docker, these variables are set in `docker-compose.yml` and injected into the containers automatically.
+
 Quick start (local):
 
 1. Install dependencies:
